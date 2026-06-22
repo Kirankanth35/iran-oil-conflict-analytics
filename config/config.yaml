@@ -1,0 +1,40 @@
+project:
+  name: "US-Iran Conflict Oil Risk Analytics"
+  owner: "Kiran Kanth Madigani"
+  timezone: "America/Los_Angeles"
+
+# Event dates are intentionally configurable because geopolitical timelines can change.
+# Update these if your instructor or project scope defines a different event window.
+event_windows:
+  baseline_start: "2025-01-01"
+  pre_conflict_end: "2026-02-27"
+  conflict_start: "2026-02-28"
+  tentative_deescalation_start: "2026-06-15"
+  analysis_end: "2026-06-21"
+
+fred:
+  base_url: "https://fred.stlouisfed.org/graph/fredgraph.csv?id="
+  series:
+    DCOILWTICO: "WTI crude oil spot price, Cushing OK, USD/barrel"
+    DCOILBRENTEU: "Brent crude oil spot price, USD/barrel"
+    GASREGW: "U.S. regular gasoline price, weekly, USD/gallon"
+    CPIAUCSL: "Consumer Price Index for All Urban Consumers"
+    PCEPI: "Personal Consumption Expenditures price index"
+    DFF: "Effective Federal Funds Rate"
+    VIXCLS: "CBOE Volatility Index"
+    SP500: "S&P 500 Index"
+
+gdelt:
+  enabled: true
+  base_url: "https://api.gdeltproject.org/api/v2/doc/doc"
+  query: '(Iran OR Iranian OR Hormuz OR "Strait of Hormuz") (oil OR crude OR gasoline OR tanker OR energy OR sanctions)'
+  startdatetime: "20250101000000"
+  enddatetime: "20260621000000"
+  mode: "timelinevol"
+  format: "json"
+  timelinesmooth: 3
+
+analysis:
+  rolling_window_days: 14
+  lag_days: 21
+  event_study_window_days: 30

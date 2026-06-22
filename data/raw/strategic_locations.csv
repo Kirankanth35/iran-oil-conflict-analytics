@@ -1,0 +1,9 @@
+name,category,latitude,longitude,description
+Strait of Hormuz,Oil chokepoint,26.5667,56.2500,"Critical maritime chokepoint between Persian Gulf and Gulf of Oman"
+Tehran,Iran capital,35.6892,51.3890,"Political center of Iran"
+Washington DC,U.S. capital,38.9072,-77.0369,"U.S. policy center"
+Cushing Oklahoma,WTI benchmark hub,35.9851,-96.7669,"Major U.S. oil storage and WTI pricing hub"
+Houston Texas,Energy hub,29.7604,-95.3698,"U.S. energy trading/refining center"
+New York City,Financial market hub,40.7128,-74.0060,"U.S. financial market center"
+Los Angeles,Consumer/fuel market hub,34.0522,-118.2437,"Large U.S. consumer and logistics market"
+Persian Gulf,Energy region,26.0000,52.0000,"Energy-exporting region connected to Hormuz"
