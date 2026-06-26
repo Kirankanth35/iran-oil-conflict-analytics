@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_df8139636b55bbf8f42ab6edf1009ebb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <h3 style='position: fixed; z-index:9999; top: 10px; left: 50px; background: white; padding: 8px; border: 1px solid #aaa;'>
+    U.S.-Iran Oil Risk Map: Chokepoints, Benchmarks, and Business Hubs
+    </h3>
+    
+    
+            <div class="folium-map" id="map_df8139636b55bbf8f42ab6edf1009ebb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_df8139636b55bbf8f42ab6edf1009ebb = L.map(
+                "map_df8139636b55bbf8f42ab6edf1009ebb",
+                {
+                    center: [26.5667, 56.25],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_167041992dd0a2591ae47c58123ab5d4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_167041992dd0a2591ae47c58123ab5d4.addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var marker_f59e447963b0545b9bb6f36c0ca6126a = L.marker(
+                [26.5667, 56.25],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_09452d5c9bc34b391f0ef7281837efd1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_129ef1ff4a852635980a9d65406949f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f6474935a097fbb3d71338ac51550f3 = $(`<div id="html_0f6474935a097fbb3d71338ac51550f3" style="width: 100.0%; height: 100.0%;"><b>Strait of Hormuz</b><br>Oil chokepoint<br>Critical maritime chokepoint between Persian Gulf and Gulf of Oman</div>`)[0];
+                popup_129ef1ff4a852635980a9d65406949f9.setContent(html_0f6474935a097fbb3d71338ac51550f3);
+            
+        
+
+        marker_f59e447963b0545b9bb6f36c0ca6126a.bindPopup(popup_129ef1ff4a852635980a9d65406949f9)
+        ;
+
+        
+    
+    
+            marker_f59e447963b0545b9bb6f36c0ca6126a.bindTooltip(
+                `<div>
+                     Strait of Hormuz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f59e447963b0545b9bb6f36c0ca6126a.setIcon(icon_09452d5c9bc34b391f0ef7281837efd1);
+            
+    
+            var marker_0427cbff6d3fe261aa47ddcbeba7c090 = L.marker(
+                [35.6892, 51.389],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_77915dac660cedc77e0bc53b37d6615b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1c74500e147cc324315580674672562d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5161153368c48cca8d65f5576c706544 = $(`<div id="html_5161153368c48cca8d65f5576c706544" style="width: 100.0%; height: 100.0%;"><b>Tehran</b><br>Iran capital<br>Political center of Iran</div>`)[0];
+                popup_1c74500e147cc324315580674672562d.setContent(html_5161153368c48cca8d65f5576c706544);
+            
+        
+
+        marker_0427cbff6d3fe261aa47ddcbeba7c090.bindPopup(popup_1c74500e147cc324315580674672562d)
+        ;
+
+        
+    
+    
+            marker_0427cbff6d3fe261aa47ddcbeba7c090.bindTooltip(
+                `<div>
+                     Tehran
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0427cbff6d3fe261aa47ddcbeba7c090.setIcon(icon_77915dac660cedc77e0bc53b37d6615b);
+            
+    
+            var marker_1456a4acbac810e647dfd01dd6821552 = L.marker(
+                [38.9072, -77.0369],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_13ca1fe042dde99e612caacbde6465d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6136acb00221e5c8c9819e11f600fa4b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2794b912aa5ad259e4a59006db250446 = $(`<div id="html_2794b912aa5ad259e4a59006db250446" style="width: 100.0%; height: 100.0%;"><b>Washington DC</b><br>U.S. capital<br>U.S. policy center</div>`)[0];
+                popup_6136acb00221e5c8c9819e11f600fa4b.setContent(html_2794b912aa5ad259e4a59006db250446);
+            
+        
+
+        marker_1456a4acbac810e647dfd01dd6821552.bindPopup(popup_6136acb00221e5c8c9819e11f600fa4b)
+        ;
+
+        
+    
+    
+            marker_1456a4acbac810e647dfd01dd6821552.bindTooltip(
+                `<div>
+                     Washington DC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1456a4acbac810e647dfd01dd6821552.setIcon(icon_13ca1fe042dde99e612caacbde6465d9);
+            
+    
+            var marker_846758692187505a056d7711b8fd8057 = L.marker(
+                [35.9851, -96.7669],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_330f2f6303fa48a12703d951e46976e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e45e27d8f5d258844fdcb0a88708e22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f36c692ffd9929d84aee8a926aa3815 = $(`<div id="html_4f36c692ffd9929d84aee8a926aa3815" style="width: 100.0%; height: 100.0%;"><b>Cushing Oklahoma</b><br>WTI benchmark hub<br>Major U.S. oil storage and WTI pricing hub</div>`)[0];
+                popup_2e45e27d8f5d258844fdcb0a88708e22.setContent(html_4f36c692ffd9929d84aee8a926aa3815);
+            
+        
+
+        marker_846758692187505a056d7711b8fd8057.bindPopup(popup_2e45e27d8f5d258844fdcb0a88708e22)
+        ;
+
+        
+    
+    
+            marker_846758692187505a056d7711b8fd8057.bindTooltip(
+                `<div>
+                     Cushing Oklahoma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_846758692187505a056d7711b8fd8057.setIcon(icon_330f2f6303fa48a12703d951e46976e6);
+            
+    
+            var marker_fb556e0314d29fbcc5e2b52662d21b58 = L.marker(
+                [29.7604, -95.3698],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_3523aa68bc440707b04a20f20ac992ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ccf3561db72446bdc7c357523b25e07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a9910d6c36acaeb80eb58344989c481 = $(`<div id="html_2a9910d6c36acaeb80eb58344989c481" style="width: 100.0%; height: 100.0%;"><b>Houston Texas</b><br>Energy hub<br>U.S. energy trading/refining center</div>`)[0];
+                popup_9ccf3561db72446bdc7c357523b25e07.setContent(html_2a9910d6c36acaeb80eb58344989c481);
+            
+        
+
+        marker_fb556e0314d29fbcc5e2b52662d21b58.bindPopup(popup_9ccf3561db72446bdc7c357523b25e07)
+        ;
+
+        
+    
+    
+            marker_fb556e0314d29fbcc5e2b52662d21b58.bindTooltip(
+                `<div>
+                     Houston Texas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb556e0314d29fbcc5e2b52662d21b58.setIcon(icon_3523aa68bc440707b04a20f20ac992ca);
+            
+    
+            var marker_30d8a16ea7cf667c91fb39892bc501a1 = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_6e140dbe17511f9e735a5697b72f598d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0439c614254d7be4a7c608ce910ff977 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dda5ae15363b0a9de0764fc8d90357b4 = $(`<div id="html_dda5ae15363b0a9de0764fc8d90357b4" style="width: 100.0%; height: 100.0%;"><b>New York City</b><br>Financial market hub<br>U.S. financial market center</div>`)[0];
+                popup_0439c614254d7be4a7c608ce910ff977.setContent(html_dda5ae15363b0a9de0764fc8d90357b4);
+            
+        
+
+        marker_30d8a16ea7cf667c91fb39892bc501a1.bindPopup(popup_0439c614254d7be4a7c608ce910ff977)
+        ;
+
+        
+    
+    
+            marker_30d8a16ea7cf667c91fb39892bc501a1.bindTooltip(
+                `<div>
+                     New York City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_30d8a16ea7cf667c91fb39892bc501a1.setIcon(icon_6e140dbe17511f9e735a5697b72f598d);
+            
+    
+            var marker_1b276793d8b70c11d78848f5110fe2bf = L.marker(
+                [34.0522, -118.2437],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_b1be2555a26e69a12a22b5e02ada3e01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00a4e63870549806d4e9dffe729dd017 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa6f7f0a2da37842bbc0052d7192abe9 = $(`<div id="html_fa6f7f0a2da37842bbc0052d7192abe9" style="width: 100.0%; height: 100.0%;"><b>Los Angeles</b><br>Consumer/fuel market hub<br>Large U.S. consumer and logistics market</div>`)[0];
+                popup_00a4e63870549806d4e9dffe729dd017.setContent(html_fa6f7f0a2da37842bbc0052d7192abe9);
+            
+        
+
+        marker_1b276793d8b70c11d78848f5110fe2bf.bindPopup(popup_00a4e63870549806d4e9dffe729dd017)
+        ;
+
+        
+    
+    
+            marker_1b276793d8b70c11d78848f5110fe2bf.bindTooltip(
+                `<div>
+                     Los Angeles
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1b276793d8b70c11d78848f5110fe2bf.setIcon(icon_b1be2555a26e69a12a22b5e02ada3e01);
+            
+    
+            var marker_6e20346545de82c72735a22a6cdd1831 = L.marker(
+                [26.0, 52.0],
+                {
+}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            var icon_f1a1ed5765591898d18150e5b013ee17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9f59edcf7298982df531146315b04f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_376fd8faad3aec3d20e813d24229ba25 = $(`<div id="html_376fd8faad3aec3d20e813d24229ba25" style="width: 100.0%; height: 100.0%;"><b>Persian Gulf</b><br>Energy region<br>Energy-exporting region connected to Hormuz</div>`)[0];
+                popup_a9f59edcf7298982df531146315b04f5.setContent(html_376fd8faad3aec3d20e813d24229ba25);
+            
+        
+
+        marker_6e20346545de82c72735a22a6cdd1831.bindPopup(popup_a9f59edcf7298982df531146315b04f5)
+        ;
+
+        
+    
+    
+            marker_6e20346545de82c72735a22a6cdd1831.bindTooltip(
+                `<div>
+                     Persian Gulf
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e20346545de82c72735a22a6cdd1831.setIcon(icon_f1a1ed5765591898d18150e5b013ee17);
+            
+    
+            var poly_line_bf264412b9ae50479fe5bc7a6eea794f = L.polyline(
+                [[26.3, 55.3], [26.45, 56.0], [26.55, 56.5], [25.8, 57.2]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_df8139636b55bbf8f42ab6edf1009ebb);
+        
+    
+            poly_line_bf264412b9ae50479fe5bc7a6eea794f.bindTooltip(
+                `<div>
+                     Approximate Strait of Hormuz transit corridor
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
